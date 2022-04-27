@@ -9,7 +9,7 @@ function App() {
       <header className="App-header">
        <NavBar/>
       </header>      
-      <ItemListContainer name='Nico'/>
+      <ItemListContainer/>
     </div>
   );
 }
