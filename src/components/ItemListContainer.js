@@ -23,7 +23,7 @@ const ItemListContainer = () => {
   }, []);
 
   return (
-    <div className="h-screen w-screen py-6 bg-yellow-50 flex items-center justify-center flex-wrap">
+    <div className="py-6 flex items-center justify-center flex-wrap">
       {listaJuegos.map( juego => <CardJuego key={juego.id} datoJuego={juego}/> )}          
     </div>
   )

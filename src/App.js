@@ -5,11 +5,11 @@ import NavBar from './components/NavBar';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-yellow-50">
       <header className="App-header">
        <NavBar/>
       </header>      
-      <ItemListContainer/>
+      <ItemListContainer />
     </div>
   );
 }
