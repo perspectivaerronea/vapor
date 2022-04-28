@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/vapor-padin/static/css/main.541cf95a.css",
-    "main.js": "/vapor-padin/static/js/main.910b6a63.js",
+    "main.css": "/vapor-padin/static/css/main.87be0c9b.css",
+    "main.js": "/vapor-padin/static/js/main.026cf869.js",
     "static/js/787.b78b60e4.chunk.js": "/vapor-padin/static/js/787.b78b60e4.chunk.js",
     "static/media/riverbond.png": "/vapor-padin/static/media/riverbond.5b1b097bd4a80aa0bb62.png",
     "static/media/jda.png": "/vapor-padin/static/media/jda.b75687ee7e3f781b45fc.png",
@@ -10,12 +10,12 @@
     "static/media/logosteam.png": "/vapor-padin/static/media/logosteam.68776aae8ce0c4537450.png",
     "static/media/cart.png": "/vapor-padin/static/media/cart.5da2b8bb2ea7e670b9cf.png",
     "index.html": "/vapor-padin/index.html",
-    "main.541cf95a.css.map": "/vapor-padin/static/css/main.541cf95a.css.map",
-    "main.910b6a63.js.map": "/vapor-padin/static/js/main.910b6a63.js.map",
+    "main.87be0c9b.css.map": "/vapor-padin/static/css/main.87be0c9b.css.map",
+    "main.026cf869.js.map": "/vapor-padin/static/js/main.026cf869.js.map",
     "787.b78b60e4.chunk.js.map": "/vapor-padin/static/js/787.b78b60e4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.541cf95a.css",
-    "static/js/main.910b6a63.js"
+    "static/css/main.87be0c9b.css",
+    "static/js/main.026cf869.js"
   ]
 }
