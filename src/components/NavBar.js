@@ -1,6 +1,6 @@
 import React from 'react';
 import Carwidget from './Carwidget';
-import logo from '../logosteam.png';
+import logo from '../imagenes/logosteam.png';
 
 const NavBar = () => {
     return (

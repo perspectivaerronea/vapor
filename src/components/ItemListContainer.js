@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import CardJuego from './CardJuego';
+import ItemList from './ItemList';
 import { juegos as datosJuegos } from '../juegos';
 
 const ItemListContainer = () => {
@@ -24,7 +24,7 @@ const ItemListContainer = () => {
 
   return (
     <div className="py-6 flex items-center justify-center flex-wrap">
-      {listaJuegos.map( juego => <CardJuego key={juego.id} datoJuego={juego}/> )}          
+      {listaJuegos.map( juego => <ItemList key={juego.id} datoJuego={juego}/> )}          
     </div>
   )
 }
