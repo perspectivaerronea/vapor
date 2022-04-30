@@ -2,7 +2,7 @@
 const CardJuego = ({datoJuego}) => {       
 
         return (
-        <>
+          <div className="bg-white w-72 h-100 shadow-md rounded m-3">
           <div className="h-3/4 w-full">
             <img className="w-full h-full object-cover rounded-t" src={datoJuego.imagen} alt={datoJuego.name}/>
           </div>
@@ -14,7 +14,7 @@ const CardJuego = ({datoJuego}) => {
             <p className="text-gray-600 text-sm leading-5 mt-1 line-through">{datoJuego.precio} {datoJuego.moneda}</p>
             <p className="text-red-600 text-sm leading-5 mt-1 ">0.00 {datoJuego.moneda}</p>
           </div>
-        </>
+        </div>
     )
 }
 export default CardJuego

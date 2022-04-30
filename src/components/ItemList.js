@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import CardJuego from './CardJuego';
 
-const ItemList = ({ datoJuego }) => {
+const ItemList = ({ listaJuegos }) => {
     return (
-        <div className="bg-white w-72 h-100 shadow-md rounded m-3">
-            <CardJuego key={datoJuego.id} datoJuego={datoJuego} />
-        </div>
+        <>
+            {/* {players.map((player) => (<Player key={player.id} player={player} />))} */}
+            {listaJuegos.map((juego) => (<CardJuego key={juego.id} datoJuego={juego} />))}
+        </>
     )
 }
 
