@@ -13,20 +13,22 @@ function App() {
         <header className="App-header">
           <NavBar />
         </header>
+        <div className="h-fit">
         <Routes>          
 
-          <Route path='/vapor-padin/' element={<MainPageList/>}/>          
+          <Route path='/' element={<MainPageList/>}/>          
 
-          <Route path='/vapor-padin/steam' element={<ItemListContainer lista='steam'/>} />
-          <Route path='/vapor-padin/steam/:steamId' element={<ItemDetail tienda='steam'/>} />
+          <Route path='/steam' element={<ItemListContainer lista='steam'/>} />
+          <Route path='/steam/:ItemId' element={<ItemDetail tienda='steam'/>} />
 
-          <Route path='/vapor-padin/epic' element={<ItemListContainer lista='epic'/>} />
-          <Route path='/vapor-padin/epic/:epicId' element={<ItemDetail tienda='epic'/>} />
+          <Route path='/epic' element={<ItemListContainer lista='epic'/>} />
+          <Route path='/epic/:ItemId' element={<ItemDetail tienda='epic'/>} />
 
-          <Route path='/vapor-padin/itchio' element={<ItemListContainer lista='itchio'/>} />
-          <Route path='/vapor-padin/itchio/:itchioId' element={<ItemDetail tienda='itchio'/>} />
+          <Route path='/itchio' element={<ItemListContainer lista='itchio'/>} />
+          <Route path='/itchio/:ItemId' element={<ItemDetail tienda='itchio'/>} />
 
         </Routes>
+        </div>
       </BrowserRouter>
 
     </div>
