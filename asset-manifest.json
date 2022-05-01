@@ -1,21 +1,32 @@
 {
   "files": {
-    "main.css": "/vapor-padin/static/css/main.87be0c9b.css",
-    "main.js": "/vapor-padin/static/js/main.db4f8a1f.js",
-    "static/js/787.b78b60e4.chunk.js": "/vapor-padin/static/js/787.b78b60e4.chunk.js",
-    "static/media/riverbond.png": "/vapor-padin/static/media/riverbond.5b1b097bd4a80aa0bb62.png",
-    "static/media/jda.png": "/vapor-padin/static/media/jda.b75687ee7e3f781b45fc.png",
-    "static/media/amnesiarebirth.png": "/vapor-padin/static/media/amnesiarebirth.90c720f678e14fb561f1.png",
-    "static/media/paradigm.png": "/vapor-padin/static/media/paradigm.4ea9bda6329458ecacf2.png",
+    "main.css": "/vapor-padin/static/css/main.4e73796b.css",
+    "main.js": "/vapor-padin/static/js/main.a62101b3.js",
+    "static/js/787.588d8e19.chunk.js": "/vapor-padin/static/js/787.588d8e19.chunk.js",
+    "static/media/terraformingMars.png": "/vapor-padin/static/media/terraformingMars.917efcd031b33315d902.png",
+    "static/media/yugiohMasterDuel.png": "/vapor-padin/static/media/yugiohMasterDuel.1c6f7ebcd1a864db7b9e.png",
+    "static/media/portalReloaded.png": "/vapor-padin/static/media/portalReloaded.78633f96ee291da26b54.png",
+    "static/media/bloodbornepsx.png": "/vapor-padin/static/media/bloodbornepsx.518db1034cd43aa4644b.png",
+    "static/media/counterstrike.png": "/vapor-padin/static/media/counterstrike.a9d46fdb2132c6ca95d4.png",
+    "static/media/destiny2.png": "/vapor-padin/static/media/destiny2.231bc388402ba130c3c4.png",
+    "static/media/SteamLogo.png": "/vapor-padin/static/media/SteamLogo.875c1489004de09e1db6.png",
+    "static/media/doki-doki-literature-club.jpg": "/vapor-padin/static/media/doki-doki-literature-club.ae2345cc3cd7b0fba8c0.jpg",
     "static/media/logosteam.png": "/vapor-padin/static/media/logosteam.68776aae8ce0c4537450.png",
+    "static/media/Epic_Games_logo.png": "/vapor-padin/static/media/Epic_Games_logo.6585c5e45fccdd62966a.png",
+    "static/media/FridayNightFunkin.webp": "/vapor-padin/static/media/FridayNightFunkin.52b8aea66bda16b29dfc.webp",
+    "static/media/jda.png": "/vapor-padin/static/media/jda.d587b5033b57d172c11e.png",
+    "static/media/amnesiarebirth.png": "/vapor-padin/static/media/amnesiarebirth.d289d1417114747a2311.png",
+    "static/media/riverbond.png": "/vapor-padin/static/media/riverbond.352d482c51d5c8bb73aa.png",
+    "static/media/itch-io-logo.png": "/vapor-padin/static/media/itch-io-logo.4abeb30721449c61aa9e.png",
     "static/media/cart.png": "/vapor-padin/static/media/cart.5da2b8bb2ea7e670b9cf.png",
+    "static/media/paradigm.png": "/vapor-padin/static/media/paradigm.19162304932c098e30fd.png",
     "index.html": "/vapor-padin/index.html",
-    "main.87be0c9b.css.map": "/vapor-padin/static/css/main.87be0c9b.css.map",
-    "main.db4f8a1f.js.map": "/vapor-padin/static/js/main.db4f8a1f.js.map",
-    "787.b78b60e4.chunk.js.map": "/vapor-padin/static/js/787.b78b60e4.chunk.js.map"
+    "main.4e73796b.css.map": "/vapor-padin/static/css/main.4e73796b.css.map",
+    "main.a62101b3.js.map": "/vapor-padin/static/js/main.a62101b3.js.map",
+    "787.588d8e19.chunk.js.map": "/vapor-padin/static/js/787.588d8e19.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.87be0c9b.css",
-    "static/js/main.db4f8a1f.js"
+    "static/css/main.4e73796b.css",
+    "static/js/main.a62101b3.js"
   ]
 }
