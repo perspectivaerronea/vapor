@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import CardJuego from './CardJuego';
+import Item from './Item';
 
 const ItemList = ({ listaJuegos }) => {
     return (
-        <>
-            {/* {players.map((player) => (<Player key={player.id} player={player} />))} */}
-            {listaJuegos.map((juego) => (<CardJuego key={juego.id} datoJuego={juego} />))}
+        <>            
+            {listaJuegos.map((juego) => (<Item key={juego.id} datoJuego={juego} />))}
         </>
     )
 }

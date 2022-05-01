@@ -5,7 +5,7 @@ const loadSpinner = () => {
         width="150"
         height="150"
         frameBorder="0"
-        class="giphy-embed"
+        className="giphy-embed"
         allowFullScreen
       ></iframe>
     );
