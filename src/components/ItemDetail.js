@@ -9,6 +9,7 @@ const ItemDetail = ({ detalle }) => {
                 <div className="w-1/2 p-3 mx-auto" >
                     <span className="text-lg font-semibold uppercase tracking-wide ">{detalle.name}</span>
                     <p>{detalle.descripcion}</p>                      
+                    <h2 className="text-red-600">{detalle.precio} {detalle.moneda}</h2>
                 </div>
                 <button className="bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"><a href={detalle.link} target="_blank">Obtener</a></button>      
             </div>        
