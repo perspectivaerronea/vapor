@@ -4,11 +4,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import MainPageList from './components/MainPageList';
-import ItemDetail from './components/ItemDetail';
+// import ItemDetail from './components/ItemDetail';
+import ItemDetailContainer from './components/ItemDetailContainer';
+import ItemList from './components/ItemList';
 
 function App() {
   return (
-    <div className="App bg-gray-500">
+    <div className="App bg-gray-500 ">
       <BrowserRouter>
         <header className="App-header">
           <NavBar />
@@ -16,17 +18,12 @@ function App() {
         <div className="h-fit">
         <Routes>          
 
-          <Route path='/' element={<MainPageList/>}/>          
+          <Route path='/' element={<ItemListContainer/>}/>
 
-          <Route path='/steam' element={<ItemListContainer lista='steam'/>} />
-          <Route path='/steam/:ItemId' element={<ItemDetail tienda='steam'/>} />
-
-          <Route path='/epic' element={<ItemListContainer lista='epic'/>} />
-          <Route path='/epic/:ItemId' element={<ItemDetail tienda='epic'/>} />
-
-          <Route path='/itchio' element={<ItemListContainer lista='itchio'/>} />
-          <Route path='/itchio/:ItemId' element={<ItemDetail tienda='itchio'/>} />
-
+          <Route path='/:catId' element={<ItemListContainer/>}/>
+                  
+          <Route path="/:catId/:itemId" element={<ItemDetailContainer />}/>
+          
         </Routes>
         </div>
       </BrowserRouter>

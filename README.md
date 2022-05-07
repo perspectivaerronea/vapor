@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# Vapor-Padin
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Vapor es un hub central en donde buscar las ofertas de las tiendas de videojuegos más importantes. 
 
-## Available Scripts
+Cuenta con
 
-In the project directory, you can run:
+- Vista general de las novedades
+- Carro de "Compra" permite poder canjear los códigos para los juegos de una sola vez, en lugar de tener que ir uno por uno.
+- Filtro por categorías: entendiendo como categorias cada una de las tiendas que nutren al sitio
+- Vistas de listas de videojuegos: Es decir la visión particular de los productos de una tienda.
+- Vista de detalles: permite ver el detalle de los productos y pedir el código de descarga.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Instalación
+## OPCION A
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Forkeá y cloná el repositorio
 
-### `npm test`
+2. Parado en la raíz del proyecto corré el comando 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```
+   npm install
+   ```
 
-### `npm run build`
+    para instalar todas las dependecias del proyecto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Usá 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```
+   npm start
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    para correr el proyecto, que estará disponible en http://localhost:3000
 
-### `npm run eject`
+## OPCIÓN B
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. En el repositorio está activo el GitHub pages para acceder a la build del sitio. 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Usando el link se puede acceder al sitio sin problema. https://perspectivaerronea.github.io/vapor-padin/
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Dependencias
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Uso de Tailwind para dar formato a la aplicación.
 
-## Learn More
+Uso de React, React Dom, React Router Dom para la navegación
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Uso de JSON para persistencia de datos
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Uso Github como repositorio
 
-### Code Splitting
+Uso Github Pages como servidor para que se pueda acceder tanto a la aplicación
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Uso gh-pages para generar el build de la app que está disponible a través de Github Pages
 
-### Analyzing the Bundle Size
+## Aplicación en funcionamiento
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Autor
 
-### Making a Progressive Web App
+Nicolás Alejandro Padin Paez
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+2022 - Curso de React en CoderHouse
+README.md
+Mostrando README.md

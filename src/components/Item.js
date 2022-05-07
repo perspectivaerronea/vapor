@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Item = ({ datoJuego }) => {
 
-  const ruta = '/' + datoJuego.tienda + '/' + datoJuego.id;
+  const ruta = '/' + datoJuego.category + '/' + datoJuego.id;
 
   return (
     <Link to={ruta}>
