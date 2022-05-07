@@ -12,18 +12,7 @@ const ItemDetailContainer = () => {
     const { catId, itemId } = useParams();
 
     useEffect(() => {
-
-        //Esto es una función asincrónica, anonima que se auto ejecuta
-        /*(async () => {
-            const itemData = await getItemDetail()
-            if (itemData) {
-                setJuego(itemData);
-            } else {
-                console.log("error");
-            }
-
-        })()*/
-
+        
         const getJuego = () => {
             return new Promise((resolve, reject) => {
                 setTimeout(() => {
@@ -44,7 +33,6 @@ const ItemDetailContainer = () => {
 
     }, [itemId])
     
-/*<ItemDetail detalle={detalleJuego} />*/
     return (
         <div className="rounded m-10">
             {isLoading ? <LoadSpinner /> : <ItemDetail detalle={detalleJuego} /> }                                    

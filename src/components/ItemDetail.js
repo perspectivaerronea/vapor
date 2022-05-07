@@ -1,6 +1,5 @@
 
-const ItemDetail = ({ detalle }) => {
-    console.log(detalle);
+const ItemDetail = ({ detalle }) => {    
     return (
         <>
             <div className="bg-white rounded m-5 p-5">
@@ -11,7 +10,7 @@ const ItemDetail = ({ detalle }) => {
                     <span className="text-lg font-semibold uppercase tracking-wide ">{detalle.name}</span>
                     <p>{detalle.descripcion}</p>                      
                 </div>
-                <button class="bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"><a href={detalle.link} target="_blank">Obtener</a></button>      
+                <button className="bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"><a href={detalle.link} target="_blank">Obtener</a></button>      
             </div>        
         </>
     )
