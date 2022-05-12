@@ -7,7 +7,7 @@ import img6 from '../imagenes/riverbond.png';
 import img7 from '../imagenes/jda.png';
 import img8 from '../imagenes/paradigm.png';
 import img9 from '../imagenes/terraformingMars.png';
-import img10 from '../imagenes/FridayNightFunkin.webp';
+import img10 from '../imagenes/FridayNightFunkin.png';
 import img11 from '../imagenes/doki-doki-literature-club.jpg';
 import img12 from '../imagenes/deltarune.png';
 import img13 from '../imagenes/bloodbornepsx.png';

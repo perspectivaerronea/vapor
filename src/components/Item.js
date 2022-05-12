@@ -12,9 +12,6 @@ const Item = ({ datoJuego }) => {
       </div>
       <div className="w-full h-1/4 p-3">        
           <span className="text-lg font-semibold uppercase tracking-wide ">{datoJuego.name}</span>        
-
-        {/* <p className="text-gray-600 text-sm leading-5 mt-1 line-through">{datoJuego.precio} {datoJuego.moneda}</p>
-        <p className="text-red-600 text-sm leading-5 mt-1 ">0.00 {datoJuego.moneda}</p> */}
       </div>
     </div>
     </Link>
