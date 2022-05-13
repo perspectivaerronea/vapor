@@ -1,27 +1,30 @@
 {
   "files": {
-    "main.css": "/vapor-padin/static/css/main.e8e507e0.css",
-    "main.js": "/vapor-padin/static/js/main.88871e30.js",
+    "main.css": "/vapor-padin/static/css/main.3449330d.css",
+    "main.js": "/vapor-padin/static/js/main.508f15eb.js",
     "static/media/terraformingMars.png": "/vapor-padin/static/media/terraformingMars.917efcd031b33315d902.png",
+    "static/media/FridayNightFunkin.png": "/vapor-padin/static/media/FridayNightFunkin.99cde41ed5b1184cbc20.png",
     "static/media/yugiohMasterDuel.png": "/vapor-padin/static/media/yugiohMasterDuel.1c6f7ebcd1a864db7b9e.png",
     "static/media/portalReloaded.png": "/vapor-padin/static/media/portalReloaded.78633f96ee291da26b54.png",
-    "static/media/bloodbornepsx.png": "/vapor-padin/static/media/bloodbornepsx.518db1034cd43aa4644b.png",
     "static/media/counterstrike.png": "/vapor-padin/static/media/counterstrike.a9d46fdb2132c6ca95d4.png",
     "static/media/destiny2.png": "/vapor-padin/static/media/destiny2.231bc388402ba130c3c4.png",
+    "static/media/bloodbornepsx.png": "/vapor-padin/static/media/bloodbornepsx.84350a29f419a7098f32.png",
     "static/media/doki-doki-literature-club.jpg": "/vapor-padin/static/media/doki-doki-literature-club.ae2345cc3cd7b0fba8c0.jpg",
+    "static/media/shopping_full.png": "/vapor-padin/static/media/shopping_full.40d4ca658730afbccc67.png",
     "static/media/logosteam.png": "/vapor-padin/static/media/logosteam.68776aae8ce0c4537450.png",
-    "static/media/FridayNightFunkin.webp": "/vapor-padin/static/media/FridayNightFunkin.52b8aea66bda16b29dfc.webp",
     "static/media/jda.png": "/vapor-padin/static/media/jda.d587b5033b57d172c11e.png",
+    "static/media/shopping_empty.png": "/vapor-padin/static/media/shopping_empty.bb54e6c42bfde6684a8d.png",
     "static/media/amnesiarebirth.png": "/vapor-padin/static/media/amnesiarebirth.d289d1417114747a2311.png",
     "static/media/riverbond.png": "/vapor-padin/static/media/riverbond.352d482c51d5c8bb73aa.png",
-    "static/media/cart.png": "/vapor-padin/static/media/cart.5da2b8bb2ea7e670b9cf.png",
+    "static/media/dump.png": "/vapor-padin/static/media/dump.64c9ab560cd5ec9ddfd3.png",
+    "static/media/plus.png": "/vapor-padin/static/media/plus.94c8a526c03879287062.png",
     "static/media/paradigm.png": "/vapor-padin/static/media/paradigm.19162304932c098e30fd.png",
     "index.html": "/vapor-padin/index.html",
-    "main.e8e507e0.css.map": "/vapor-padin/static/css/main.e8e507e0.css.map",
-    "main.88871e30.js.map": "/vapor-padin/static/js/main.88871e30.js.map"
+    "main.3449330d.css.map": "/vapor-padin/static/css/main.3449330d.css.map",
+    "main.508f15eb.js.map": "/vapor-padin/static/js/main.508f15eb.js.map"
   },
   "entrypoints": [
-    "static/css/main.e8e507e0.css",
-    "static/js/main.88871e30.js"
+    "static/css/main.3449330d.css",
+    "static/js/main.508f15eb.js"
   ]
 }
