@@ -4,6 +4,7 @@ import { CartContext } from "../context/CartContext";
 import CartDetail from "./CartDetail"
 import Finalizar from "./Finalizar";
 import VaciarCarrito from "../imagenes/dump.png";
+import FinalizarCompra from "../imagenes/finish-line.png";
 
 const CartDetailContainer = () => {
 
@@ -34,10 +35,18 @@ const CartDetailContainer = () => {
                         <button onClick={limpiarCarrito}><img src={VaciarCarrito} alt="Vaciar Carrito" className="h-10 ml-4" /></button>
                     </div>
                     {finalizar ? <>{listaCarrito.map((juego) => (<Finalizar key={juego.item.id} juego={juego} />))}</> : <></>}
+                    {finalizar ?
+                        <Link to="/" >
+                            <button onClick={limpiarCarrito} className="border-2 border-teal-800 rounded-full p-3" >
+                                <img src={FinalizarCompra} alt="Finalizar" className="mx-auto flex items-center w-20" />
+                                <div className="text-md text-white font-bold py-2 px-4 rounded-full ">Finalizar Compra</div>
+                            </button>
+                        </Link>
+                        : <></>}
                 </>
                 : <Link to="/"> <div className="w-1/3 bg-red-300 hover:bg-red-500 text-white font-bold py-2 px-4 rounded-full mx-auto">No hay elementos en el carrito aún</div></Link>
             }
-        </div>
+        </div >
     )
 }
 export default CartDetailContainer

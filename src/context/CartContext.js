@@ -4,12 +4,14 @@ export const CartContext = createContext({
     listaCarrito: [],
     totalElementos: 0,
     finCompra: false,
+    hayStock: true,
     agregarAlCarrito: () => { },
     eliminarDelCarrito: () => { },
     sumarItem: () => { },
     restarItem: () => { },
     estaEnElCarrito: () => {},
     calcularTotal: () => {},
+    enStock: () => {},
     limpiarCarrito: () => {},
     terminarCompra: () => {}
 })
@@ -19,6 +21,7 @@ const CartContextProvider = ({ children }) => {
     const [listaCarrito, setListaCarrito] = useState([]);
     const [totalElementos, setTotalElementos] = useState(0);
     const [finCompra, setFinalizar] = useState(false);
+    const [hayStock, setHayStock] = useState(true);
 
     const estaEnElCarrito = ({ detalle }) => {
 
@@ -38,6 +41,8 @@ const CartContextProvider = ({ children }) => {
         var lista = [];
         listaCarrito.forEach(item => {item.qty = 0; item.item.cantidad = 0});   
         setListaCarrito(lista);        
+        calcularTotal();
+        setFinalizar(false);
     })
 
     const agregarAlCarrito = ({ detalle }) => {
@@ -136,9 +141,19 @@ const CartContextProvider = ({ children }) => {
     
     }
 
+    function enStock(stock, cantidad){
+        if((stock-cantidad) <= 0){
+            setHayStock(false);
+        } else{
+            setHayStock(true);
+        }
+    }
+
     const context = {
         listaCarrito,
         totalElementos,
+        finCompra,
+        hayStock,
         agregarAlCarrito,
         eliminarDelCarrito,
         sumarItem,
@@ -146,7 +161,8 @@ const CartContextProvider = ({ children }) => {
         calcularTotal,
         estaEnElCarrito,
         limpiarCarrito,
-        terminarCompra
+        terminarCompra,
+        enStock
     }
 
     return (

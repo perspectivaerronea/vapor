@@ -14,13 +14,12 @@ const Carwidget = () => {
   }
 
   useEffect(() => {
-    setCantidad(totalElementos);
-    console.log(totalElementos);
+    setCantidad(totalElementos);    
   })
 
   return (
     <Link to="/cart">
-      <button className="flex-none items-end"><img src={(estadoCarrito()) ? carritoLleno : carritoVacio} alt='carrito' className="m-2 h-20 w-20"></img></button>
+      <button className="flex items-center"><img src={(estadoCarrito()) ? carritoLleno : carritoVacio} alt='carrito' className="m-2 h-20 w-20"></img> <div className={(estadoCarrito()) ? 'rounded-full bg-blue-400 px-3' : 'rounded-full px-3'} >{cantidad}</div></button>
     </Link>
   )
 }
