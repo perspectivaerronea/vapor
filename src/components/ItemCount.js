@@ -6,12 +6,10 @@ import irAlCarrito from "../imagenes/online-shopping.png";
 const ItemCount = ({ detalle }) => {
 
     //Defino el consumer del contexto
-    const { agregarAlCarrito, eliminarDelCarrito, enStock, hayStock } = useContext(CartContext);
+    const { agregarAlCarrito, eliminarDelCarrito, enStock} = useContext(CartContext);
 
 
-    const [cantidadDisponible, setCantidadDisponible] = useState(detalle.stock);
-    const [disponible, setDisponible] = useState(true);
-
+    const [cantidadDisponible, setCantidadDisponible] = useState(detalle.stock);    
     const [cantidad, setCantidad] = useState(detalle.cantidad);
     const [stock, setStock] = useState(detalle.stock);
     const [enElCarrito, setEnElCarrito] = useState(false);
@@ -45,11 +43,6 @@ const ItemCount = ({ detalle }) => {
     function calcularExistenciasDisponibles() {
         var cantidadTotal = detalle.stock - detalle.cantidad;
         setCantidadDisponible(cantidadTotal);
-        if (cantidadTotal <= 0) {
-            setDisponible(false);
-        } else {
-            setDisponible(true);
-        }
         enStock(detalle.stock, detalle.cantidad);
     }
 
