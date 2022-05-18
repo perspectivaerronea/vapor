@@ -1,29 +1,40 @@
 import React, { useEffect, useState } from 'react';
 import ItemList from './ItemList';
-import {JUEGOS as datosJuegos} from '../data/Juegos';
+import { JUEGOS as datosJuegos } from '../data/Juegos';
 import LoadSpinner from './LoadSpinner';
 import { useParams } from 'react-router-dom';
+import { collection, getDocs, getFirestore, query, where, orderBy } from 'firebase/firestore';
 
 const ItemListContainer = () => {
 
-
   const [listaJuegos, setJuegos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
-  const {catId} = useParams();
+  const { catId } = useParams();
 
   useEffect(() => {
 
     //Se puede hacer una función flecha que devuelva la promesa en lugar de una promesa directamente, para ordenar mejor el código. 
     const getJuegos = () => {
       return new Promise((resolve, reject) => {
-        setTimeout(() => {          
-          //Trata de filtrar por algún valor, y si no trae resultados lista todo
-          const categoria = catId ? datosJuegos.filter((juego) => juego.category === catId) : datosJuegos;
 
-          resolve(categoria);
+        var consultaTemp;    
+        const db = getFirestore();
+        const docCollection = collection(db, 'juegos'); 
+        
+        if (catId != undefined) {
+          consultaTemp = query(docCollection, where('categoria', '==', catId));
+        } else {
+          consultaTemp = query(docCollection, orderBy("id"));
+        }
 
-        }, 2000);
+        const consulta = consultaTemp;        
+
+        getDocs(consulta).then(snapshot => {
+          if (snapshot.size > 0) {
+            const juegosData = snapshot.docs.map(d => ({ 'id': d.id, ...d.data() }))
+            resolve(juegosData);
+          }
+        })
       })
     };
 
@@ -31,7 +42,7 @@ const ItemListContainer = () => {
 
     getJuegos()
       .then((result) => { setJuegos(result); })
-      .catch((err) => { console.log("Hubo un error"); })
+      .catch((err) => { console.log("Hubo un error. Falló la comunicación con Firebase"); })
       .finally(() => setIsLoading(false))
   }, [catId]);
 

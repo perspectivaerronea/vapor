@@ -7,19 +7,18 @@ import quitar from "../imagenes/remove.png";
 
 const CartDetail = ({juego}) => {
 
-    const {sumarItem, restarItem, enStock,hayStock } = useContext(CartContext);
+    const {sumarItem, restarItem} = useContext(CartContext);
 
     const [cantidad,setCantidad] = useState(juego.qty);    
-    const [stock, setStock] = useState(juego.item.stock);
-    const [disponible, setDisponible] = useState(true);
+    const [stock, setStock] = useState(juego.item.stock);    
 
     const handlerSumarItem = () => {
-        setCantidad(cantidad+1);
+        setCantidad((cantidad) => { return cantidad+1});
         sumarItem({juego});
     }
 
     const handlerRestarItem = () => {
-        setCantidad(cantidad-1);
+        setCantidad((cantidad) => { return cantidad-1});
         restarItem({juego});
         if(cantidad === 0){
 
@@ -30,8 +29,8 @@ const CartDetail = ({juego}) => {
         return (stock-cantidad <= 0 ? false : true);
     }   
 
-    const rutaEmpresa = '/' + juego.item.category ;
-    const rutaJuego = '/' + juego.item.category + '/' + juego.item.id;
+    const rutaEmpresa = '/' + juego.item.categoria ;
+    const rutaJuego = '/' + juego.item.categoria + '/' + juego.item.id;
    
     return (
         <>
@@ -39,7 +38,7 @@ const CartDetail = ({juego}) => {
             <div className="bg-white w-2/3 shadow-md rounded m-3 mx-auto">
                 <div className="w-7/8 inline align-middle">
                     <div className="text-lg font-semibold uppercase p-2 flex  justify-between items-center">
-                        <Link to={rutaJuego} className="w-4/12 text-left hover:text-blue-600">{juego.item.name}</Link>
+                        <Link to={rutaJuego} className="w-4/12 text-left hover:text-blue-600">{juego.item.nombre}</Link>
                         <Link to={rutaEmpresa} className="w-6/12 hover:text-blue-600">{juego.item.tienda}</Link>                                      
                         <div className="w-2/12 flex items-center">                            
                             <button onClick={existeStock() ? handlerSumarItem : undefined}><img className="h-10" src={existeStock() ? agregar : agregar_disabled} alt="Agregar" /></button>

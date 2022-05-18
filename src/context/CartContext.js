@@ -1,3 +1,4 @@
+import { logDOM } from "@testing-library/react";
 import { createContext, useState } from "react";
 
 export const CartContext = createContext({
@@ -9,11 +10,11 @@ export const CartContext = createContext({
     eliminarDelCarrito: () => { },
     sumarItem: () => { },
     restarItem: () => { },
-    estaEnElCarrito: () => {},
-    calcularTotal: () => {},
-    enStock: () => {},
-    limpiarCarrito: () => {},
-    terminarCompra: () => {}
+    estaEnElCarrito: () => { },
+    calcularTotal: () => { },
+    enStock: () => { },
+    limpiarCarrito: () => { },
+    terminarCompra: () => { }
 })
 
 const CartContextProvider = ({ children }) => {
@@ -25,24 +26,25 @@ const CartContextProvider = ({ children }) => {
 
     const estaEnElCarrito = ({ detalle }) => {
 
+        console.log(detalle);
+        console.log(listaCarrito);
+
         const itemNuevo = { item: {}, qty: 0 };
-
+        
         itemNuevo.item = detalle;
-        itemNuevo.item.cantidad++;
-        itemNuevo.qty++;
-
+      
         const encontrado = listaCarrito.find(elemento => elemento.item.id === itemNuevo.item.id);
 
         return encontrado ? true : false;
 
     }
 
-    const limpiarCarrito = (() => {        
+    const limpiarCarrito = (() => {
         var lista = [];
-        listaCarrito.forEach(item => {item.qty = 0; item.item.cantidad = 0});   
-        setListaCarrito(lista);        
+        listaCarrito.forEach(item => { item.qty = 0; item.item.cantidad = 0 });
+        setListaCarrito(lista);
         calcularTotal();
-        setFinalizar(false);
+        setFinalizar(false);        
     })
 
     const agregarAlCarrito = ({ detalle }) => {
@@ -62,10 +64,10 @@ const CartContextProvider = ({ children }) => {
             itemNuevo.qty++;
 
             var lista = listaCarrito.concat(itemNuevo);
-            setListaCarrito(currentLista => lista);                        
+            setListaCarrito(listaCarrito => { return listaCarrito.concat(itemNuevo) });
         }
 
-        setTotalElementos(currentTotal => currentTotal+1);
+        setTotalElementos(currentTotal => currentTotal + 1);
 
     }
 
@@ -85,12 +87,12 @@ const CartContextProvider = ({ children }) => {
             if (encontrado.qty === 0) {
 
                 var lista = listaCarrito;
-                lista.splice(lista.indexOf(encontrado), 1);
-                setListaCarrito(lista);
+                lista.splice(lista.indexOf(encontrado), 1);                
+                setListaCarrito(listaCarrito => { return listaCarrito.splice(listaCarrito.indexOf(encontrado), 1) });
             }
         }
 
-        setTotalElementos(currentTotal => currentTotal-1);
+        setTotalElementos(currentTotal => currentTotal - 1);
 
 
     }
@@ -103,7 +105,7 @@ const CartContextProvider = ({ children }) => {
             encontrado.qty++;
         }
 
-        setTotalElementos(currentTotal => currentTotal+1);
+        setTotalElementos(currentTotal => currentTotal + 1);
 
     }
 
@@ -121,11 +123,12 @@ const CartContextProvider = ({ children }) => {
             if (encontrado.qty === 0) {
                 var lista = listaCarrito;
                 lista.splice(lista.indexOf(encontrado), 1);
-                setListaCarrito(lista);
+                // setListaCarrito(lista);
+                setListaCarrito(listaCarrito => { return listaCarrito.splice(listaCarrito.indexOf(encontrado), 1) });
             }
         }
 
-        setTotalElementos(currentTotal => currentTotal-1);        
+        setTotalElementos(currentTotal => currentTotal - 1);
 
     }
 
@@ -136,15 +139,15 @@ const CartContextProvider = ({ children }) => {
     function calcularTotal() {
         var total = 0;
 
-        listaCarrito.forEach(item => total += item.qty);        
-        setTotalElementos(total);
-    
+        listaCarrito.forEach(item => total += item.qty);
+        setTotalElementos((totalElementos) => { return total });
+
     }
 
-    function enStock(stock, cantidad){
-        if((stock-cantidad) <= 0){
+    function enStock(stock, cantidad) {
+        if ((stock - cantidad) <= 0) {
             setHayStock(false);
-        } else{
+        } else {
             setHayStock(true);
         }
     }

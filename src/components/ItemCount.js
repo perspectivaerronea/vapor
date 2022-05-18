@@ -3,55 +3,59 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import irAlCarrito from "../imagenes/online-shopping.png";
 
-const ItemCount = ({ detalle }) => {
+// const ItemCount = ({ detalle }) => {
+
+ const ItemCount = ({ stock, cantidad, onAdd, onDelete }) => {
 
     //Defino el consumer del contexto
-    const { agregarAlCarrito, eliminarDelCarrito, enStock} = useContext(CartContext);
+    const { enStock } = useContext(CartContext);
 
 
-    const [cantidadDisponible, setCantidadDisponible] = useState(detalle.stock);    
-    const [cantidad, setCantidad] = useState(detalle.cantidad);
-    const [stock, setStock] = useState(detalle.stock);
+    const [cantidadDisponible, setCantidadDisponible] = useState(stock);
+    const [cantidadLocal, setCantidad] = useState(cantidad);
     const [enElCarrito, setEnElCarrito] = useState(false);
 
     function handlerAgregarAlCarrito() {
-        setCantidad(cantidad + 1);
-        agregarAlCarrito({ detalle });
+        setCantidad((cantidadLocal) => { return cantidadLocal + 1 });
+        onAdd();
         setEnElCarrito(true)
     }
 
     function handlerEliminarDelCarrito() {
-        setCantidad(cantidad - 1);
-        if (cantidad < 0) {
+        setCantidad((cantidadLocal) => { return cantidadLocal - 1 });
+        if (cantidadLocal < 0) {
             setCantidad(0);
         }
-        eliminarDelCarrito({ detalle });
-        if (cantidad == 0) {
+        onDelete();
+        if (cantidadLocal == 0) {
             setEnElCarrito(false);
         }
     }
 
     function estadoCarrito() {
-        return (cantidad > 0 ? true : false);
+        return (cantidadLocal > 0 ? true : false);
     }
 
     function quedaStock() {
-        return ((stock - cantidad == 0) ? false : true);
+        return ((stock - cantidadLocal == 0) ? false : true);
     }
 
 
     function calcularExistenciasDisponibles() {
-        var cantidadTotal = detalle.stock - detalle.cantidad;
-        setCantidadDisponible(cantidadTotal);
-        enStock(detalle.stock, detalle.cantidad);
+        setCantidadDisponible((cantidadDisponible)=>{return stock-cantidadLocal})
+        enStock(stock, cantidadLocal);
     }
+
+    useEffect(() => {
+
+    })
 
     useEffect(() => {
         estadoCarrito();
         quedaStock();
-        enStock(detalle.stock, detalle.cantidad);
+        enStock(stock, cantidadLocal);
         calcularExistenciasDisponibles();
-    }, [enElCarrito, cantidad])
+    }, [enElCarrito, cantidadLocal])
 
 
     return (
@@ -62,7 +66,7 @@ const ItemCount = ({ detalle }) => {
                     :
                     <button className="bg-gray-500 text-white font-bold py-2 px-4 rounded-full">Agregar al Carrito</button>
                 }
-                <div className="text-lg font-bold ml-2 mr-2">{detalle.cantidad}</div>
+                <div className="text-lg font-bold ml-2 mr-2">{cantidadLocal}</div>
                 {estadoCarrito() ?
                     <button onClick={handlerEliminarDelCarrito} className="bg-gray-500 hover:bg-red-500 text-white font-bold py-2 px-4 rounded-full" >Eliminar del Carrito</button>
                     :
@@ -70,8 +74,8 @@ const ItemCount = ({ detalle }) => {
                 }
             </div>
             <div className="mx-auto text-sm text-blue-600 mt-5 font-semibold">(Stock: {cantidadDisponible})</div>
-            <div className="flex items-center">                
-                {cantidad != 0 ?
+            <div className="flex items-center">
+                {cantidadLocal != 0 ?
                     <Link to="/cart" className="mx-auto"><button className="mx-auto flex items-center"><img src={irAlCarrito} className="w-20" /><div className="text-sm bg-gray-500 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded-full ">Finalizar Compra</div></button></Link>
                     :
                     <></>
