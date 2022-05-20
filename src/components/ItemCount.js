@@ -47,14 +47,15 @@ import irAlCarrito from "../imagenes/online-shopping.png";
     }
 
     useEffect(() => {
-
+        setCantidad(cantidad);
     })
 
     useEffect(() => {
         estadoCarrito();
         quedaStock();
-        enStock(stock, cantidadLocal);
+        enStock(stock, cantidadLocal);        
         calcularExistenciasDisponibles();
+        setCantidad(cantidad);
     }, [enElCarrito, cantidadLocal])
 
 

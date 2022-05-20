@@ -26,14 +26,22 @@ const CartDetailContainer = () => {
             {(totalElementos > 0) ?
                 <>
                     {finalizar ?
-                        <div disabled> {listaCarrito.map((juego) => (<CartDetail key={juego.item.id} juego={juego} />))}</div>
+                        <div disabled>
+                            {listaCarrito.map((juego) => (<CartDetail key={juego.item.id} juego={juego} />))}
+                            <div disabled className="flex justify-center items-center">
+                                <button className="bg-green-500 hover:bg-green-500 text-white font-bold py-2 px-4 rounded-full"> Generar Códigos</button>
+                                <button ><img src={VaciarCarrito} alt="Vaciar Carrito" className="h-10 ml-4" /></button>
+                            </div>
+                        </div>
                         :
-                        <>{listaCarrito.map((juego) => (<CartDetail key={juego.item.id} juego={juego} />))}</>
+                        <>
+                            {listaCarrito.map((juego) => (<CartDetail key={juego.item.id} juego={juego} />))}
+                            <div className="flex justify-center items-center">
+                                <button onClick={handlerFinalizarCompra} className="bg-green-500 hover:bg-green-500 text-white font-bold py-2 px-4 rounded-full"> Generar Códigos</button>
+                                <button onClick={limpiarCarrito}><img src={VaciarCarrito} alt="Vaciar Carrito" className="h-10 ml-4" /></button>
+                            </div>
+                        </>
                     }
-                    <div className="flex justify-center items-center">
-                        <button onClick={handlerFinalizarCompra} className="bg-green-500 hover:bg-green-500 text-white font-bold py-2 px-4 rounded-full"> Generar Códigos</button>
-                        <button onClick={limpiarCarrito}><img src={VaciarCarrito} alt="Vaciar Carrito" className="h-10 ml-4" /></button>
-                    </div>
                     {finalizar ? <>{listaCarrito.map((juego) => (<Finalizar key={juego.item.id} juego={juego} />))}</> : <></>}
                     {finalizar ?
                         <Link to="/" >

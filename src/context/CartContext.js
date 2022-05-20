@@ -25,18 +25,18 @@ const CartContextProvider = ({ children }) => {
     const [hayStock, setHayStock] = useState(true);
 
     const estaEnElCarrito = ({ detalle }) => {
-
-        console.log(detalle);
-        console.log(listaCarrito);
-
-        const itemNuevo = { item: {}, qty: 0 };
         
-        itemNuevo.item = detalle;
-      
-        const encontrado = listaCarrito.find(elemento => elemento.item.id === itemNuevo.item.id);
+        if (detalle != undefined) {
 
-        return encontrado ? true : false;
+            const itemNuevo = { item: {}, qty: 0 };
 
+            itemNuevo.item = detalle;
+
+            const encontrado = listaCarrito.find(elemento => elemento.item.id === itemNuevo.item.id);
+
+            return encontrado;
+
+        }
     }
 
     const limpiarCarrito = (() => {
@@ -44,7 +44,7 @@ const CartContextProvider = ({ children }) => {
         listaCarrito.forEach(item => { item.qty = 0; item.item.cantidad = 0 });
         setListaCarrito(lista);
         calcularTotal();
-        setFinalizar(false);        
+        setFinalizar(false);
     })
 
     const agregarAlCarrito = ({ detalle }) => {
@@ -87,7 +87,7 @@ const CartContextProvider = ({ children }) => {
             if (encontrado.qty === 0) {
 
                 var lista = listaCarrito;
-                lista.splice(lista.indexOf(encontrado), 1);                
+                lista.splice(lista.indexOf(encontrado), 1);
                 setListaCarrito(listaCarrito => { return listaCarrito.splice(listaCarrito.indexOf(encontrado), 1) });
             }
         }
@@ -120,12 +120,12 @@ const CartContextProvider = ({ children }) => {
                 encontrado.qty--;
             }
 
-            if (encontrado.qty === 0) {
-                var lista = listaCarrito;
-                lista.splice(lista.indexOf(encontrado), 1);
-                // setListaCarrito(lista);
-                setListaCarrito(listaCarrito => { return listaCarrito.splice(listaCarrito.indexOf(encontrado), 1) });
-            }
+            // if (encontrado.qty === 0) {
+            //     var lista = listaCarrito;                
+            //     lista.splice(lista.indexOf(encontrado), 1);          
+            //      console.log(listaCarrito);
+            //      setListaCarrito(listaCarrito => { return listaCarrito.splice(listaCarrito.indexOf(encontrado), 1) });
+            // }
         }
 
         setTotalElementos(currentTotal => currentTotal - 1);

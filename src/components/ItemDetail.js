@@ -1,11 +1,11 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import ItemCount from "./ItemCount";
 
 const ItemDetail = ({ detalle }) => {
 
-    const { agregarAlCarrito, eliminarDelCarrito } = useContext(CartContext);
-    // const {cantidad, setCantidad} = useState(detalle.cantidad);
+    const { agregarAlCarrito, eliminarDelCarrito, estaEnElCarrito } = useContext(CartContext);
+    const [ cantidad, setCantidad ] = useState(detalle.cantidad);    
 
     function handlerAgregarCarrito() {
         agregarAlCarrito({ detalle });
@@ -15,6 +15,17 @@ const ItemDetail = ({ detalle }) => {
         eliminarDelCarrito({ detalle });
     }
 
+    useEffect(() => {
+        if (detalle != undefined) {
+            var encontrado = estaEnElCarrito({ detalle });
+
+            if (encontrado) {
+                setCantidad(encontrado.qty);
+            } else {                
+                setCantidad(0);
+            }
+        }
+    })
 
     return (
         <>
@@ -27,7 +38,7 @@ const ItemDetail = ({ detalle }) => {
                     <p>{detalle.descripcion}</p>
                     <h2 className="text-red-600 mt-5">{detalle.precio} {detalle.moneda}</h2>
                 </div>
-                <ItemCount stock={detalle.stock} cantidad={detalle.cantidad} onAdd={handlerAgregarCarrito} onDelete={handlerEliminarCarrito} />
+                <ItemCount stock={detalle.stock} cantidad={cantidad} onAdd={handlerAgregarCarrito} onDelete={handlerEliminarCarrito} />
             </div>
         </>
     )
