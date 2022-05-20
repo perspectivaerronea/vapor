@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/vapor-padin/static/css/main.146c1576.css",
-    "main.js": "/vapor-padin/static/js/main.20358ac6.js",
+    "main.css": "/vapor-padin/static/css/main.d34eee8c.css",
+    "main.js": "/vapor-padin/static/js/main.9cb0810f.js",
     "static/media/terraformingMars.png": "/vapor-padin/static/media/terraformingMars.917efcd031b33315d902.png",
     "static/media/FridayNightFunkin.png": "/vapor-padin/static/media/FridayNightFunkin.99cde41ed5b1184cbc20.png",
     "static/media/yugiohMasterDuel.png": "/vapor-padin/static/media/yugiohMasterDuel.1c6f7ebcd1a864db7b9e.png",
@@ -23,11 +23,11 @@
     "static/media/plus-disabled.png": "/vapor-padin/static/media/plus-disabled.53bbfdde948cb3ee63c3.png",
     "static/media/paradigm.png": "/vapor-padin/static/media/paradigm.19162304932c098e30fd.png",
     "index.html": "/vapor-padin/index.html",
-    "main.146c1576.css.map": "/vapor-padin/static/css/main.146c1576.css.map",
-    "main.20358ac6.js.map": "/vapor-padin/static/js/main.20358ac6.js.map"
+    "main.d34eee8c.css.map": "/vapor-padin/static/css/main.d34eee8c.css.map",
+    "main.9cb0810f.js.map": "/vapor-padin/static/js/main.9cb0810f.js.map"
   },
   "entrypoints": [
-    "static/css/main.146c1576.css",
-    "static/js/main.20358ac6.js"
+    "static/css/main.d34eee8c.css",
+    "static/js/main.9cb0810f.js"
   ]
 }
