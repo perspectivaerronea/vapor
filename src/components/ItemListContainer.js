@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import ItemList from './ItemList';
-import { JUEGOS as datosJuegos } from '../data/Juegos';
 import LoadSpinner from './LoadSpinner';
 import { useParams } from 'react-router-dom';
 import { collection, getDocs, getFirestore, query, where, orderBy } from 'firebase/firestore';

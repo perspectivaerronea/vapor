@@ -6,8 +6,6 @@ import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import CartContextProvider from './context/CartContext';
 import CartDetailContainer from './components/CartDetailContainer';
-import PruebaFirebase from './shop/PruebaFirebase';
-import ItemsFirebase from './components/ItemsFirebase';
 
 function App() {
 
@@ -35,9 +33,6 @@ function App() {
               <Route path="/:catId/:itemId" element={<ItemDetailContainer />} />
 
               <Route path="/cart" element={<CartDetailContainer/>} />
-
-              <Route path="/PruebaFirebase" element={<PruebaFirebase/>} />
-              <Route path="/ItemsFirebase" element={<ItemsFirebase/>} />
 
             </Routes>           
 
