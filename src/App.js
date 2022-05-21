@@ -9,9 +9,6 @@ import CartDetailContainer from './components/CartDetailContainer';
 
 function App() {
 
-  // const cart = useContext(CartContext);
-
-
   return (
     <CartContextProvider>
 
@@ -25,16 +22,16 @@ function App() {
           <div className="h-fit">
             <Routes>
 
-              <Route path='/' element={<ItemListContainer />} />
-              <Route path='/vapor-padin/' element={<ItemListContainer />} />
+              <Route path='/'               element={<ItemListContainer />}   />
+              <Route path='/vapor-padin/'   element={<ItemListContainer />}   />
 
-              <Route path='/:catId' element={<ItemListContainer />} />
+              <Route path='/:catId'         element={<ItemListContainer />}   />
 
               <Route path="/:catId/:itemId" element={<ItemDetailContainer />} />
 
-              <Route path="/cart" element={<CartDetailContainer/>} />
+              <Route path="/cart"           element={<CartDetailContainer />} />
 
-            </Routes>           
+            </Routes>
 
           </div>
         </BrowserRouter>
@@ -43,5 +40,5 @@ function App() {
   );
 }
 
-export default App
+export default App;
 

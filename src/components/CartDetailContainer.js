@@ -19,45 +19,32 @@ const CartDetailContainer = () => {
 
     useEffect(() => {
         calcularTotal();
-    }, [totalElementos, listaCarrito])
+    }, [totalElementos, listaCarrito, totalPrecio])
 
     return (
         <div className="flex-col justify-center items-center ">
             {(totalElementos > 0) ?
                 <>
-                    {finalizar ?
-                        <div disabled>
-                            {listaCarrito.map((juego) => (<CartDetail key={juego.item.id} juego={juego} />))}
-                            <div className="bg-yellow-600 text-white font-bold py-2 px-4 rounded-xl m-2 w-60 mx-auto">Precio Total: {totalPrecio} usd</div>
-                            <div className="flex justify-center items-center">
-                                <button className="bg-green-500 hover:bg-green-500 text-white font-bold py-2 px-4 rounded-full"> Generar Códigos</button>
-                                <button ><img src={VaciarCarrito} alt="Vaciar Carrito" className="h-10 ml-4" /></button>
-                            </div>
+                    <div disabled={finalizar}>
+                        {listaCarrito.map((juego) => (<CartDetail key={juego.item.id} juego={juego} />))}
+                        <div className="bg-yellow-600 text-white font-bold py-2 px-4 rounded-xl m-2 w-60 mx-auto">Precio Total: {totalPrecio} usd</div>
+                        <div className="flex justify-center items-center">
+                            <button onClick={handlerFinalizarCompra} className="bg-green-500 hover:bg-green-500 text-white font-bold py-2 px-4 rounded-full"> Generar Códigos</button>
+                            <button onClick={limpiarCarrito}><img src={VaciarCarrito} alt="Vaciar Carrito" className="h-10 ml-4" /></button>
                         </div>
-                        :
+                    </div >
+
+                    {finalizar &&
                         <>
-                            {listaCarrito.map((juego) => (<CartDetail key={juego.item.id} juego={juego} />))}
-                            <div className="bg-yellow-600 text-white font-bold py-2 px-4 rounded-xl m-2 w-60 mx-auto">Precio Total: {totalPrecio} usd</div>
-                            <div className="flex justify-center items-center">
-                                <button onClick={handlerFinalizarCompra} className="bg-green-500 hover:bg-green-500 text-white font-bold py-2 px-4 rounded-full"> Generar Códigos</button>
-                                <button onClick={limpiarCarrito}><img src={VaciarCarrito} alt="Vaciar Carrito" className="h-10 ml-4" /></button>
-                            </div>
+                            <div>{listaCarrito.map((juego) => (<Finalizar key={juego.item.id} juego={juego} />))}</div>
+                            <Link to="/" >
+                                <button onClick={limpiarCarrito} className="border-2 border-teal-800 rounded-full p-3" >
+                                    <img src={FinalizarCompra} alt="Finalizar" className="mx-auto flex items-center w-20" />
+                                    <div className="text-md text-white font-bold py-2 px-4 rounded-full ">Finalizar Compra</div>
+                                </button>
+                            </Link>
                         </>
-                    }                    
-                    {finalizar ? 
-                        <>                            
-                            {listaCarrito.map((juego) => (<Finalizar key={juego.item.id} juego={juego} />))}
-                        </> : 
-                        <>
-                        </>}
-                    {finalizar ?
-                        <Link to="/" >
-                            <button onClick={limpiarCarrito} className="border-2 border-teal-800 rounded-full p-3" >
-                                <img src={FinalizarCompra} alt="Finalizar" className="mx-auto flex items-center w-20" />
-                                <div className="text-md text-white font-bold py-2 px-4 rounded-full ">Finalizar Compra</div>
-                            </button>
-                        </Link>
-                        : <></>}
+                    }
                 </>
                 : <Link to="/"> <div className="w-1/3 bg-red-300 hover:bg-red-500 text-white font-bold py-2 px-4 rounded-full mx-auto">No hay elementos en el carrito aún</div></Link>
             }

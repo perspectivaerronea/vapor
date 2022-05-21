@@ -126,12 +126,6 @@ const CartContextProvider = ({ children }) => {
                 encontrado.qty--;
             }
 
-            // if (encontrado.qty === 0) {
-            //     var lista = listaCarrito;                
-            //     lista.splice(lista.indexOf(encontrado), 1);          
-            //      console.log(listaCarrito);
-            //      setListaCarrito(listaCarrito => { return listaCarrito.splice(listaCarrito.indexOf(encontrado), 1) });
-            // }
         }
 
         setTotalElementos(currentTotal => currentTotal - 1);

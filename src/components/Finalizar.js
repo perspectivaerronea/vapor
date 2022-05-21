@@ -24,16 +24,16 @@ const Finalizar = ({ juego }) => {
   }
 
   const listaCodigos = () => {
-    return  <ul>{Array.from(Array(juego.qty), (e, i) => {
+    return <ul>{Array.from(Array(juego.qty), (e, i) => {
       return <li key={i}><a href={juego.item.link} target="_blank" rel="noreferrer"> {generarCodigo()} </a></li>
     })}</ul>
 
-  } 
+  }
 
-  return (    
+  return (
     <div className="bg-white w-1/3 shadow-md rounded m-3 mx-auto">
       <div className="text-3xl bold ">{juego.item.name}</div>
-      <div className="text-green-800">{listaCodigos()}</div>      
+      <div className="text-green-800">{listaCodigos()}</div>
     </div>
   )
 }
