@@ -6,6 +6,7 @@ export const CartContext = createContext({
     totalElementos: 0,
     finCompra: false,
     hayStock: true,
+    totalPrecio: 0,
     agregarAlCarrito: () => { },
     eliminarDelCarrito: () => { },
     sumarItem: () => { },
@@ -14,13 +15,15 @@ export const CartContext = createContext({
     calcularTotal: () => { },
     enStock: () => { },
     limpiarCarrito: () => { },
-    terminarCompra: () => { }
+    terminarCompra: () => { },
+    calcularTotalPrecio: () => { }
 })
 
 const CartContextProvider = ({ children }) => {
 
     const [listaCarrito, setListaCarrito] = useState([]);
     const [totalElementos, setTotalElementos] = useState(0);
+    const [totalPrecio, setTotalPrecio] = useState(0);
     const [finCompra, setFinalizar] = useState(false);
     const [hayStock, setHayStock] = useState(true);
 
@@ -45,6 +48,7 @@ const CartContextProvider = ({ children }) => {
         setListaCarrito(lista);
         calcularTotal();
         setFinalizar(false);
+        calcularTotalPrecio();
     })
 
     const agregarAlCarrito = ({ detalle }) => {
@@ -68,6 +72,8 @@ const CartContextProvider = ({ children }) => {
         }
 
         setTotalElementos(currentTotal => currentTotal + 1);
+
+        calcularTotalPrecio();
 
     }
 
@@ -94,6 +100,7 @@ const CartContextProvider = ({ children }) => {
 
         setTotalElementos(currentTotal => currentTotal - 1);
 
+        calcularTotalPrecio();
 
     }
 
@@ -107,6 +114,7 @@ const CartContextProvider = ({ children }) => {
 
         setTotalElementos(currentTotal => currentTotal + 1);
 
+        calcularTotalPrecio();
     }
 
 
@@ -130,10 +138,30 @@ const CartContextProvider = ({ children }) => {
 
         setTotalElementos(currentTotal => currentTotal - 1);
 
+        calcularTotalPrecio();
     }
 
     const terminarCompra = () => {
         setFinalizar(true);
+    }
+
+    function calcularTotalPrecio() {
+        var total = 0;
+
+        listaCarrito.forEach(item => {
+        
+            console.log(item);
+            console.log(item.item.precio);
+            console.log(item.item.cantidad);
+            total += parseFloat(item.item.precio) * parseInt(item.item.cantidad);
+            console.log(total);
+        
+        });
+        
+        setTotalPrecio((totalPrecio) => { return Math.round((total + Number.EPSILON) * 100) / 100 });
+
+        console.log(totalPrecio);
+
     }
 
     function calcularTotal() {
@@ -157,6 +185,7 @@ const CartContextProvider = ({ children }) => {
         totalElementos,
         finCompra,
         hayStock,
+        totalPrecio,
         agregarAlCarrito,
         eliminarDelCarrito,
         sumarItem,
@@ -165,7 +194,8 @@ const CartContextProvider = ({ children }) => {
         estaEnElCarrito,
         limpiarCarrito,
         terminarCompra,
-        enStock
+        enStock,
+        calcularTotalPrecio
     }
 
     return (
