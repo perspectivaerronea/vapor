@@ -8,7 +8,7 @@ import irAlCarrito from "../imagenes/online-shopping.png";
  const ItemCount = ({ stock, cantidad, onAdd, onDelete }) => {
 
     //Defino el consumer del contexto
-    const { enStock } = useContext(CartContext);
+    const { enStock, calcularTotalPrecio } = useContext(CartContext);
 
 
     const [cantidadDisponible, setCantidadDisponible] = useState(stock);
@@ -56,6 +56,7 @@ import irAlCarrito from "../imagenes/online-shopping.png";
         enStock(stock, cantidadLocal);        
         calcularExistenciasDisponibles();
         setCantidad(cantidad);
+        calcularTotalPrecio();
     }, [enElCarrito, cantidadLocal])
 
 

@@ -148,20 +148,11 @@ const CartContextProvider = ({ children }) => {
     function calcularTotalPrecio() {
         var total = 0;
 
-        listaCarrito.forEach(item => {
-        
-            console.log(item);
-            console.log(item.item.precio);
-            console.log(item.item.cantidad);
-            total += parseFloat(item.item.precio) * parseInt(item.item.cantidad);
-            console.log(total);
-        
+        listaCarrito.forEach(item => {  
+            total += parseFloat(item.item.precio) * parseInt(item.item.cantidad);  
         });
-        
+
         setTotalPrecio((totalPrecio) => { return Math.round((total + Number.EPSILON) * 100) / 100 });
-
-        console.log(totalPrecio);
-
     }
 
     function calcularTotal() {

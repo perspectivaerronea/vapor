@@ -28,8 +28,8 @@ const CartDetailContainer = () => {
                     {finalizar ?
                         <div disabled>
                             {listaCarrito.map((juego) => (<CartDetail key={juego.item.id} juego={juego} />))}
-                            <div disabled className="bg-yellow-600 text-white font-bold py-2 px-4 rounded-xl m-2 w-60 mx-auto">Precio Total: {totalPrecio}</div>
-                            <div disabled className="flex justify-center items-center">
+                            <div className="bg-yellow-600 text-white font-bold py-2 px-4 rounded-xl m-2 w-60 mx-auto">Precio Total: {totalPrecio} usd</div>
+                            <div className="flex justify-center items-center">
                                 <button className="bg-green-500 hover:bg-green-500 text-white font-bold py-2 px-4 rounded-full"> Generar Códigos</button>
                                 <button ><img src={VaciarCarrito} alt="Vaciar Carrito" className="h-10 ml-4" /></button>
                             </div>
@@ -37,7 +37,7 @@ const CartDetailContainer = () => {
                         :
                         <>
                             {listaCarrito.map((juego) => (<CartDetail key={juego.item.id} juego={juego} />))}
-                            <div className="bg-yellow-600 text-white font-bold py-2 px-4 rounded-xl m-2 w-60 mx-auto">Precio Total: {totalPrecio}</div>
+                            <div className="bg-yellow-600 text-white font-bold py-2 px-4 rounded-xl m-2 w-60 mx-auto">Precio Total: {totalPrecio} usd</div>
                             <div className="flex justify-center items-center">
                                 <button onClick={handlerFinalizarCompra} className="bg-green-500 hover:bg-green-500 text-white font-bold py-2 px-4 rounded-full"> Generar Códigos</button>
                                 <button onClick={limpiarCarrito}><img src={VaciarCarrito} alt="Vaciar Carrito" className="h-10 ml-4" /></button>
