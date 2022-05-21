@@ -16,17 +16,17 @@ const ItemListContainer = () => {
     const getJuegos = () => {
       return new Promise((resolve, reject) => {
 
-        var consultaTemp;    
+        let consultaTemp;
         const db = getFirestore();
-        const docCollection = collection(db, 'juegos'); 
-        
+        const docCollection = collection(db, 'juegos');
+
         if (catId != undefined) {
           consultaTemp = query(docCollection, where('categoria', '==', catId));
         } else {
           consultaTemp = query(docCollection, orderBy("id"));
         }
 
-        const consulta = consultaTemp;        
+        const consulta = consultaTemp;
 
         getDocs(consulta).then(snapshot => {
           if (snapshot.size > 0) {

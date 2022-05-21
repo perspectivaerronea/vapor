@@ -30,13 +30,13 @@ Cuenta con
    npm start
    ```
 
-    para correr el proyecto, que estará disponible en http://localhost:3000
+    para correr el proyecto, que estará disponible en [http://localhost:3000](http://localhost:3000)
 
 ## OPCIÓN B
 
 1. En el repositorio está activo el GitHub pages para acceder a la build del sitio. 
 
-2. Usando el link se puede acceder al sitio sin problema. https://perspectivaerronea.github.io/vapor-padin/
+2. Usando el link se puede acceder al sitio sin problema. [https://perspectivaerronea.github.io/vapor-padin/](https://perspectivaerronea.github.io/vapor-padin/)
 
 ## Dependencias
 
@@ -44,7 +44,7 @@ Uso de Tailwind para dar formato a la aplicación.
 
 Uso de React, React Dom, React Router Dom para la navegación
 
-Uso de JSON para persistencia de datos
+Uso de Firebase como servidor en la nube.
 
 Uso Github como repositorio
 

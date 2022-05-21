@@ -1,4 +1,3 @@
-import { logDOM } from "@testing-library/react";
 import { createContext, useState } from "react";
 
 export const CartContext = createContext({
@@ -43,7 +42,7 @@ const CartContextProvider = ({ children }) => {
     }
 
     const limpiarCarrito = (() => {
-        var lista = [];
+        let lista = [];
         listaCarrito.forEach(item => { item.qty = 0; item.item.cantidad = 0 });
         setListaCarrito(lista);
         calcularTotal();
@@ -66,8 +65,7 @@ const CartContextProvider = ({ children }) => {
 
             itemNuevo.item.cantidad++;
             itemNuevo.qty++;
-
-            var lista = listaCarrito.concat(itemNuevo);
+                        
             setListaCarrito(listaCarrito => { return listaCarrito.concat(itemNuevo) });
         }
 
