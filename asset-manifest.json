@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/vapor-padin/static/css/main.8c96db95.css",
-    "main.js": "/vapor-padin/static/js/main.6092f34e.js",
+    "main.js": "/vapor-padin/static/js/main.df634382.js",
     "static/media/finish-line.png": "/vapor-padin/static/media/finish-line.dfcc8ebbcfd4310258c6.png",
     "static/media/shopping_full.png": "/vapor-padin/static/media/shopping_full.40d4ca658730afbccc67.png",
     "static/media/logosteam.png": "/vapor-padin/static/media/logosteam.68776aae8ce0c4537450.png",
@@ -12,10 +12,10 @@
     "static/media/plus-disabled.png": "/vapor-padin/static/media/plus-disabled.53bbfdde948cb3ee63c3.png",
     "index.html": "/vapor-padin/index.html",
     "main.8c96db95.css.map": "/vapor-padin/static/css/main.8c96db95.css.map",
-    "main.6092f34e.js.map": "/vapor-padin/static/js/main.6092f34e.js.map"
+    "main.df634382.js.map": "/vapor-padin/static/js/main.df634382.js.map"
   },
   "entrypoints": [
     "static/css/main.8c96db95.css",
-    "static/js/main.6092f34e.js"
+    "static/js/main.df634382.js"
   ]
 }
