@@ -18,12 +18,12 @@ const ItemListContainer = () => {
 
         let consultaTemp;
         const db = getFirestore();
-        const docCollection = collection(db, 'juegos');
+        const docCollection = collection(db, "juegos");
 
         if (catId != undefined) {
-          consultaTemp = query(docCollection, where('categoria', '==', catId));
+          consultaTemp = query(docCollection, where("categoria", "==", catId));                    
         } else {
-          consultaTemp = query(docCollection, orderBy("id"));
+          consultaTemp = query(docCollection, orderBy("id", "asc"));
         }
 
         const consulta = consultaTemp;

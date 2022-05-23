@@ -15,7 +15,8 @@ export const CartContext = createContext({
     enStock: () => { },
     limpiarCarrito: () => { },
     terminarCompra: () => { },
-    calcularTotalPrecio: () => { }
+    calcularTotalPrecio: () => { },
+    eliminarItem: () => { }
 })
 
 const CartContextProvider = ({ children }) => {
@@ -27,7 +28,7 @@ const CartContextProvider = ({ children }) => {
     const [hayStock, setHayStock] = useState(true);
 
     const estaEnElCarrito = ({ detalle }) => {
-        
+
         if (detalle != undefined) {
 
             const itemNuevo = { item: {}, qty: 0 };
@@ -65,7 +66,7 @@ const CartContextProvider = ({ children }) => {
 
             itemNuevo.item.cantidad++;
             itemNuevo.qty++;
-                        
+
             setListaCarrito(listaCarrito => { return listaCarrito.concat(itemNuevo) });
         }
 
@@ -106,13 +107,18 @@ const CartContextProvider = ({ children }) => {
 
         const encontrado = listaCarrito.find(elemento => elemento.item.id === juego.item.id);
         if (encontrado) {
-            encontrado.item.cantidad++;
-            encontrado.qty++;
-        }
 
-        setTotalElementos(currentTotal => currentTotal + 1);
+            if ((encontrado.item.stock - (encontrado.item.cantidad+1)) >= 0) {
+                encontrado.item.cantidad++;
+                encontrado.qty++;
 
-        calcularTotalPrecio();
+                setTotalElementos(currentTotal => currentTotal + 1);
+                calcularTotalPrecio();
+
+                return true;
+            }
+        }            
+        return false;
     }
 
 
@@ -126,11 +132,31 @@ const CartContextProvider = ({ children }) => {
                 encontrado.qty--;
             }
 
+            setTotalElementos(currentTotal => currentTotal - 1);
+
+            calcularTotalPrecio();
+
+            return true;
         }
 
-        setTotalElementos(currentTotal => currentTotal - 1);
+        return false;
+    }
+
+    const eliminarItem = ({ juego }) => {
+
+        const encontrado = listaCarrito.find(elemento => elemento.item.id === juego.item.id);
+
+        if (encontrado) {
+
+            setTotalElementos(currentTotal => currentTotal - encontrado.item.cantidad);
+
+            encontrado.item.cantidad = 0;
+            encontrado.qty = 0;
+        }
+
 
         calcularTotalPrecio();
+
     }
 
     const terminarCompra = () => {
@@ -140,8 +166,8 @@ const CartContextProvider = ({ children }) => {
     function calcularTotalPrecio() {
         var total = 0;
 
-        listaCarrito.forEach(item => {  
-            total += parseFloat(item.item.precio) * parseInt(item.item.cantidad);  
+        listaCarrito.forEach(item => {
+            total += parseFloat(item.item.precio) * parseInt(item.item.cantidad);
         });
 
         setTotalPrecio((totalPrecio) => { return Math.round((total + Number.EPSILON) * 100) / 100 });
@@ -178,7 +204,8 @@ const CartContextProvider = ({ children }) => {
         limpiarCarrito,
         terminarCompra,
         enStock,
-        calcularTotalPrecio
+        calcularTotalPrecio,
+        eliminarItem
     }
 
     return (
