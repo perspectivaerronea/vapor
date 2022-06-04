@@ -40,7 +40,7 @@ const ItemDetailContainer = () => {
     }, [itemId])
 
     return (
-        <div className="rounded m-10 flex items-center justify-center ">
+        <div className="rounded m-10 flex items-center justify-center">    
             {isLoading ? <LoadSpinner /> : detalleJuego.map((d) => (<ItemDetail key={d.id} detalle={d} />))}            
         </div>
     )

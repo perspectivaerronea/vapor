@@ -5,7 +5,7 @@ import CartDetail from "./CartDetail"
 import Finalizar from "./Finalizar";
 import VaciarCarrito from "../imagenes/dump.png";
 import FinalizarCompra from "../imagenes/finish-line.png";
-import { addDoc, collection, doc, getDoc, getDocs, getFirestore, query, updateDoc, where } from "firebase/firestore";
+import { addDoc, collection, doc, getDocs, getFirestore, query, updateDoc, where } from "firebase/firestore";
 
 const CartDetailContainer = () => {
 
@@ -17,8 +17,11 @@ const CartDetailContainer = () => {
 
     const elemento = {
         id: 0,
+        categoria: '',
         nombre: '',
+        imagen: '',
         cantidad: 0
+
     }
 
     const handlerGenerarCodigos = () => {
@@ -43,7 +46,9 @@ const CartDetailContainer = () => {
                 getDocs(consulta).then(async (snapshot) => {
 
                     elemento.id = juego.item.id;
+                    elemento.categoria = juego.item.categoria;
                     elemento.nombre = juego.item.nombre;
+                    elemento.imagen = juego.item.imagen;
                     elemento.cantidad = qty;
 
                     if (snapshot.size > 0) {

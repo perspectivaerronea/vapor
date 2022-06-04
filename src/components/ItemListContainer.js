@@ -47,7 +47,7 @@ const ItemListContainer = () => {
 
 
   return (
-    <div className="py-6 flex items-center justify-center flex-wrap h-100">
+    <div className="py-6 flex items-center justify-center flex-wrap h-100" >
       {isLoading ? <LoadSpinner /> : <ItemList listaJuegos={listaJuegos} />}
     </div>
   )

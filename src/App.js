@@ -6,6 +6,7 @@ import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import CartContextProvider from './context/CartContext';
 import CartDetailContainer from './components/CartDetailContainer';
+import TopContainer from './components/TopContainer';
 
 function App() {
 
@@ -30,6 +31,8 @@ function App() {
               <Route path="/:catId/:itemId" element={<ItemDetailContainer />} />
 
               <Route path="/cart"           element={<CartDetailContainer />} />
+
+              <Route path="/top"           element={<TopContainer />} />
 
             </Routes>
 
