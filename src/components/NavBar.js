@@ -19,7 +19,7 @@ const NavBar = () => {
                 <Link to="/steam" onClick={finCompra && limpiarCarrito} className="hover:text-red-300 m-2"> Steam</Link>
                 <Link to="/epic" onClick={finCompra && limpiarCarrito} className="hover:text-red-300 m-2"> Epic</Link>
                 <Link to="/itchio" onClick={finCompra && limpiarCarrito} className="hover:text-red-300 m-2"> Itchio</Link>                
-                <Link to="/top" onClick={finCompra && limpiarCarrito} className="text-yellow-400 hover:text-red-300"> Top<img src={top} alt='top' className="inline h-7 ml-2" />  </Link>                 
+                <Link to="/top" onClick={finCompra && limpiarCarrito} className="text-yellow-400 hover:text-lime-400"> Top<img src={top} alt='top' className="inline h-7 ml-2" />  </Link>                 
             </nav>
             <div className="w-1/12">                                
                 <Carwidget />                

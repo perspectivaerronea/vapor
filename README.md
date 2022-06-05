@@ -9,6 +9,7 @@ Cuenta con
 - Filtro por categorías: entendiendo como categorias cada una de las tiendas que nutren al sitio
 - Vistas de listas de videojuegos: Es decir la visión particular de los productos de una tienda.
 - Vista de detalles: permite ver el detalle de los productos y pedir el código de descarga.
+- TOP de Ventas
 
 
 ## Instalación
@@ -36,7 +37,7 @@ Cuenta con
 
 1. En el repositorio está activo el GitHub pages para acceder a la build del sitio. 
 
-2. Usando el link se puede acceder al sitio sin problema. [https://perspectivaerronea.github.io/vapor-padin/](https://perspectivaerronea.github.io/vapor-padin/)
+2. Usando el link se puede acceder al sitio sin problema. [https://vapor-padin.vercel.app](https://vapor-padin.vercel.app)
 
 ## Dependencias
 
@@ -48,9 +49,7 @@ Uso de Firebase como servidor en la nube.
 
 Uso Github como repositorio
 
-Uso Github Pages como servidor para que se pueda acceder tanto a la aplicación
-
-Uso gh-pages para generar el build de la app que está disponible a través de Github Pages
+Uso de Vercel como servidor para que se pueda acceder tanto a la aplicación
 
 ## Aplicación en funcionamiento
 
